@@ -2,10 +2,10 @@ body,
 html {
   margin: 0;
   padding: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 .page-wrapper {
-  background-image: url("../img/bg-1.jpg");
+  background-image: url('../img/bg-1.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -25,7 +25,7 @@ html {
   height: 100%;
   background-color: #00000014;
   position: absolute;
-  content: "";
+  content: '';
   display: block;
   z-index: -1;
 }
@@ -96,3 +96,9 @@ html {
   box-shadow: none;
 }
 /*# sourceMappingURL=style.css.map */
+
+@media (max-width: 768px) {
+  .rhap_volume-container {
+    display: none;
+  }
+}

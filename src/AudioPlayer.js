@@ -21,6 +21,7 @@ const MusicPlayer = () => {
   const playerRef = useRef(null);
   const preloadAudioRef = useRef(new Audio()); // Hidden audio element for preloading
   const preloadedIndex = useRef(-1); // Track which song is preloaded
+  const [isMobileView, setIsMobileView] = useState(false);
 
   // Handle listen event
   const handleListen = (e) => {
@@ -61,12 +62,31 @@ const MusicPlayer = () => {
 
   useEffect(() => {
     preloadAudioRef.current.preload = 'auto'; // Set preload attribute
+
+    // Media query to detect screen size change
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+    // Function to update the layout based on the screen size
+    const handleResize = () => {
+      setIsMobileView(mediaQuery.matches);
+    };
+
+    // Set initial layout state
+    handleResize();
+
+    // Add event listener for screen size changes
+    mediaQuery.addEventListener('change', handleResize);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      mediaQuery.removeEventListener('change', handleResize);
+    };
   }, []);
   return (
     <AudioPlayer
       ref={playerRef}
       src={audioFiles[currentIndex].src}
-      layout="horizontal-reverse"
+      layout={isMobileView ? 'stacked' : 'horizontal-reverse'}
       autoPlay
       listenInterval={1000} // Interval to call onListen (in ms)
       onListen={handleListen}
@@ -74,6 +94,7 @@ const MusicPlayer = () => {
       loop={false}
       autoPlayAfterSrcChange={true}
       onError={(e) => console.error('Error playing audio:', e)}
+      showVolumeControl={!isMobileView}
     />
   );
 };
