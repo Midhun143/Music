@@ -1,0 +1,43 @@
+body, html{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+.page-wrapper{
+    background-color: #fff;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    .header-block{
+        border-bottom: 1px solid #dfdfdf;
+    }
+    .header-block, .footer-block{
+        padding: 15px;
+        flex: 0 0 auto;
+        text-align: center;
+    }
+    .footer-block{
+        border-top: 1px solid #dfdfdf;
+        p{
+            color: #516d8c;
+            font-size: 14px;
+            margin: 0;
+        }
+        
+    }
+    .body-block{
+        flex: 1 1 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+        .player-block{
+            border: 2px solid #dfdfdf;
+            border-radius: 10px;
+            min-height: 50px;
+            min-width: 250px;
+            max-width: 100%;
+        }
+    }
+}
