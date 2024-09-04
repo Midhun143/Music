@@ -5,17 +5,14 @@ const audioFiles = [
   {
     name: 'Song 1',
     src: `${process.env.PUBLIC_URL}/music/Absolute_Buffoonery_Loop_G_Minor_130_BPM.wav`,
-    // src: `${process.env.PUBLIC_URL}/music/BabyElephantWalk60.wav`,
   },
   {
     name: 'Song 2',
     src: `${process.env.PUBLIC_URL}/music/Learn_to_Turn_Solo_Guitar_E_Minor_120_BPM.wav`,
-    // src: `${process.env.PUBLIC_URL}/music/ImperialMarch60.wav`,
   },
   {
     name: 'Song 3',
     src: `${process.env.PUBLIC_URL}/music/Solo_Drumset_Groove_1_135_BPM.wav`,
-    // src: `${process.env.PUBLIC_URL}/music/file_example_WAV_10MG.wav`,
   },
 ];
 
@@ -74,7 +71,7 @@ const MusicPlayer = () => {
       listenInterval={1000} // Interval to call onListen (in ms)
       onListen={handleListen}
       onEnded={handleSongEnd} // Play the preloaded song when the current song ends
-      loop={false} // No need for loop since we handle it manually
+      loop={false}
       autoPlayAfterSrcChange={true}
       onError={(e) => console.error('Error playing audio:', e)}
     />
