@@ -96,9 +96,47 @@ html {
   box-shadow: none;
 }
 /*# sourceMappingURL=style.css.map */
-
 @media (max-width: 768px) {
-  .rhap_volume-container {
+  .page-wrapper .body-block .player-block {
+    min-width: 80%;
+  }
+}
+
+@media (max-width: 579px) {
+  /* .rhap_volume-container {
     display: none;
+  } */
+  .page-wrapper .body-block .player-block .rhap_container {
+    padding: 5px;
+  }
+  .page-wrapper .body-block .player-block {
+    padding-right: 10px;
+  }
+  .page-wrapper .body-block .player-block .rhap_play-pause-button,
+  .page-wrapper .body-block .player-block .rhap_play-pause-button svg {
+    width: 45px;
+    height: 45px;
+  }
+}
+@media (max-width: 479px) {
+  .page-wrapper .body-block .player-block .rhap_forward-button svg,
+  .page-wrapper .body-block .player-block .rhap_rewind-button svg {
+    width: 30px;
+  }
+  .page-wrapper .body-block .player-block .rhap_forward-button,
+  .page-wrapper .body-block .player-block .rhap_rewind-button {
+    width: 30px;
+  }
+  .page-wrapper .body-block .player-block {
+    min-width: 95%;
+  }
+  .page-wrapper .body-block .player-block .rhap_additional-controls {
+    flex: 0 0 10%;
+  }
+  .page-wrapper .body-block .player-block .rhap_main-controls {
+    flex: 1 1 auto;
+  }
+  .page-wrapper .body-block .player-block .rhap_volume-controls {
+    max-width: 100px;
   }
 }
